@@ -9,7 +9,7 @@ Connection Object{
 }
 */
 function get_connections(turn_no){
-	var turn_data = GAME_REPLAY[turn_no];
+	var turn_data = REPLAY[turn_no];
 	var active_conns=[];
 	for(var i=0;i< turn_data.servers.length;i++){
 		conns = turn_data.servers[i].connections;
@@ -22,7 +22,7 @@ function get_connections(turn_no){
 }
 
 function get_servers_status(turn_no){
-	var turn_data = GAME_REPLAY[turn_no];
+	var turn_data = REPLAY[turn_no];
 	var server_statuses=[];
 	for(var i = 0; i < turn_data.servers.length; i++){
 		server_statuses.push(

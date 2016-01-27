@@ -1191,7 +1191,7 @@
 		.\-1u\28small\29 {
 			margin-left: 8.33333%;
 		}
-
+		
 
 
 	}
@@ -1410,6 +1410,10 @@
 		}
 		.timeline-event-content p{
 			width: 200px;
+		}
+
+		.col-md-6{
+			width: 100%;
 		}
 
 	}
@@ -3026,6 +3030,7 @@
 			.wrapper.style5 input[type="text"],
 			.wrapper.style5 input[type="password"],
 			.wrapper.style5 input[type="email"],
+			.wrapper.style5 input[type="tel"],
 			.wrapper.style5 select,
 			.wrapper.style5 textarea {
 				background: rgba(0, 0, 0, 0.0375);
@@ -4049,4 +4054,32 @@ li ul{
 
 #bob-infos-triangle{
 	border-color: transparent transparent #049372 transparent;
+}
+
+#l_page{
+	background: white;
+	color: black;
+}
+
+#l_page button{
+	color: black;
+
+}
+
+
+
+#add{
+	margin:auto;
+	display: block;
+	width: 100px;
+}
+input[type="text"],input[type="tel"], input[type="password"], input[type="email"], select{
+width: 50%;
+display: inline;
+}
+
+#r_page{
+	background: white;
+	color: black;
+	text-align: center;
 }

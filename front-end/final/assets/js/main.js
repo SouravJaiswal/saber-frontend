@@ -367,5 +367,9 @@
 	});
 	});
 	
+	//Highlight 
+	
+	hljs.initHighlightingOnLoad();
+	
 
 })(jQuery);

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'includes/db.php';
+//include 'includes/db.php';
 
 ?>
 
@@ -20,7 +20,11 @@ include 'includes/db.php';
 		<?php if($page_title == "Log in" || $page_title = "Team" || $page_title = "Submissions"): ?>
 			<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		<?php endif; ?>
+		
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<?php if($page_title == "Manual" ): ?>
+			<link rel="stylesheet" href="assets/css/codepen-embed.css">
+		<?php endif; ?>
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>

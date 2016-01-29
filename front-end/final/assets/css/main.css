@@ -4083,3 +4083,34 @@ display: inline;
 	color: black;
 	text-align: center;
 }
+
+#manual{
+	color: black;
+	background: #fff;
+}
+#manual>h1,h2,h3{
+	size:1.5em;
+	color: black;
+}
+#manual a{
+	color: black;
+}
+
+.highlight{
+	color: red;
+}
+#manual a:hover{
+	text-decoration: none;
+}
+hr{
+	margin-top: 1em;
+}
+.code{
+	background: #222;
+}
+#main > header h2{
+	color: white;
+}
+#banner h2{
+	color: white;
+}

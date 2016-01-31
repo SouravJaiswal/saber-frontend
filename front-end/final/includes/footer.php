@@ -22,6 +22,9 @@
 <?php if($page_title == "Log in" || $page_title = "Team" || $page_title = "Submissions"): ?>
 	<script src="assets/js/bootstrap.min.js"></script>
 <?php endif; ?>
+<?php if($page_title == "Manual"): ?>
+	<script src="assets/js/highlight.pack.js"></script>
+<?php endif; ?>
 <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="assets/js/main.js"></script>

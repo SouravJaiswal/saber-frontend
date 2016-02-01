@@ -1103,11 +1103,11 @@ MathJax.Hub.Config({
   showProcessingMessages: false
 });
 </script>
-<title>api_python</title></head><body><article class="markdown-body"><h1 id="using-the-game-api"><a name="user-content-using-the-game-api" href="#using-the-game-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using the Game API</h1>
+<title>Game API - python</title></head><body><article class="markdown-body"><h1 id="using-the-game-api"><a name="user-content-using-the-game-api" href="#using-the-game-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using the Game API</h1>
 <p>You have to edit the <code>bot_template.py</code> in <code>mybots/</code>. This file uses <code>Quantum.py</code> to manage the game state. <code>Quantum.py</code> is an interface to the actual Game Engine.<br />
 Since your bot is provided with an interface to the Game Engine, all your bot needs to do is use the API to make Game <a href="#moves"><em>&ldquo;Move&rdquo;</em></a> calls.<br />
 <strong>Your bot&rsquo;s <code>stdout</code> is used to communicate with the Game Engine. Do not use print statements in your code <em>(else game will fail)</em></strong>.<br />
-Incase you want to print anything for debugging, use <code>stderr</code>. There is a <a href="#error_dump">helper method</a> for this.</p>
+In case you want to print anything for debugging, use <code>stderr</code>. There is a <a href="#error_dump">helper method</a> for this.</p>
 <div class="codehilite"><pre><span class="ch">#!/usr/bin/env python</span>
 
 <span class="kn">from</span> <span class="nn">Quantum</span> <span class="kn">import</span> <span class="o">*</span>
@@ -1154,12 +1154,13 @@ At the beginning of every turn, <code>game-state</code> is updated by <code>Quan
 <li><a href="#helper-methods">Helper Methods</a><ul>
 <li><a href="#error_dump">error_dump</a></li>
 <li><a href="#dist_between">dist_between</a></li>
+<li><a href="#pretty_dump_deletions-pretty_dump_additions-pretty_dump_alerts">pretty_dump_deletions, pretty_dump_additions, pretty_dump_alerts</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <h1 id="game-state-object"><a name="user-content-game-state-object" href="#game-state-object" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Game State Object</h1>
-<p>This is a pretty large object defined in <code>Quantum.py</code>. Acces attributes like this:<br />
+<p>This is a pretty large object defined in <code>Quantum.py</code>. Access attributes like this:<br />
 <div class="codehilite"><pre><span class="n">game</span><span class="o">.</span><span class="n">error_dump</span><span class="p">(</span><span class="n">game</span><span class="o">.</span><span class="n">turn</span><span class="p">)</span>
 <span class="n">game</span><span class="o">.</span><span class="n">error_dump</span><span class="p">(</span><span class="n">game</span><span class="o">.</span><span class="n">Clusters</span><span class="p">[</span><span class="n">game</span><span class="o">.</span><span class="n">my_id</span><span class="p">])</span>
 </pre></div>
@@ -1226,13 +1227,13 @@ The maximum amount of qubits that can be held in the <code>reserve</code>.</dd>
 Dictionary of <code>Connection</code> objects that have been <code>source</code>d from this server. See below.</dd>
 </dl>
 <h2 id="connection"><a name="user-content-connection" href="#connection" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Connection</h2>
-<p>These objects get created and destroyed by your and the Game Engine&rsquo;s actions. Since the Game Engine performs <a href="/home/ananya/gits/front_saber/front-end/final/game_spec.html#game-engine-has-got-your-back-covered"><em>&ldquo;Special Actions to protect your cluster&rdquo;</em></a>, these objects might even get created/removed in between turns.</p>
+<p>These objects get created and destroyed by your and the Game Engine&rsquo;s actions. Since the Game Engine performs <a href="../game_spec.html#game-engine-has-got-your-back-covered"><em>&ldquo;Special Actions to protect your cluster&rdquo;</em></a>, these objects might even get created/removed in between turns.</p>
 <blockquote>
 <p>In case of any such deletion in between turns, you can read the <a href="#notifications"><code>notification</code></a> objects to get information on why the action was taken by the Game Engine.</p>
 </blockquote>
 <dl>
 <dt>attacker</dt>
-<dd>Atacker Server ID <code>int</code><br />
+<dd>Attacker Server ID <code>int</code><br />
 The <code>Server ID</code> of the creator and owner of this Connection. Also called the <code>source</code> ID.</dd>
 <dt>victim</dt>
 <dd>Victim Server ID <code>int</code> or <code>string</code><br />
@@ -1241,7 +1242,7 @@ The <code>Server ID</code> of the target server of this Connection. Also called 
 </blockquote>
 </dd>
 <dt>arate</dt>
-<dd><code>float</code> Range {0.0, <a href="/home/ananya/gits/front_saber/front-end/final/game_spec.html#parameter-table">BANDWIDTH_LIMIT</a>}, PER TURN.<br />
+<dd><code>float</code> Range {0.0, <a href="../game_spec.html#parameter-table">BANDWIDTH_LIMIT</a>}, PER TURN.<br />
 The rate at which qubits are sent along this connection for support or attack purposes.</dd>
 <dt>state</dt>
 <dd><code>int</code> Range {0 - 4}<br />
@@ -1268,10 +1269,10 @@ Distance between the <code>source</code> and <code>sink</code> servers.</dd>
 <ul>
 <li>
 <dl>
-<dt>Incase of any Connection Objects that were deleted in-between turns</dt>
+<dt>In case of any Connection Objects that were deleted in-between turns</dt>
 <dt><code>news_deletions</code></dt>
 <dd><code>list</code> of <code>tuples(epoch%, source, sink, state)</code><blockquote>
-<p><code>epoch%</code> is a <code>float</code> that points out the exact time of the incident. Interpret as <em>&ldquo;previous turn_no + <code>epoch%</code> * time betwween 2 turns&rdquo;</em>. Note that time between 2 turns is fixed and not same as <code>game.turntime</code>.<br />
+<p><code>epoch%</code> is a <code>float</code> that points out the exact time of the incident. Interpret as <em>&ldquo;previous turn_no + <code>epoch%</code> * time between 2 turns&rdquo;</em>. Note that time between 2 turns is fixed and not same as <code>game.turntime</code>.<br />
 Other arguments give more information about the <code>Connection</code> object that got deleted.<br />
 <strong>Remember that <code>sink</code> can be <code>string</code>.</strong></p>
 </blockquote>
@@ -1280,7 +1281,7 @@ Other arguments give more information about the <code>Connection</code> object t
 </li>
 <li>
 <dl>
-<dt>Incase of new Connection objects created. New objects are necessarily created only at beginning of the turns. Hence <code>epoch%</code> is <code>0.0</code>.</dt>
+<dt>In case of new Connection objects created. New objects are necessarily created only at beginning of the turns. Hence <code>epoch%</code> is <code>0.0</code>.</dt>
 <dt><code>news_additions</code></dt>
 <dd><code>list</code> of <code>tuples(source, sink, arate, full_distance, state)</code><blockquote>
 <p><strong>Remember that <code>sink</code> can be <code>string</code>.</strong></p>
@@ -1289,12 +1290,12 @@ Other arguments give more information about the <code>Connection</code> object t
 </dl>
 </li>
 <li>
-<p><strong><em>Incase of <a href="/home/ananya/gits/front_saber/front-end/final/game_spec.html#game-engine-has-got-your-back-covered">Special Actions of the Game Engine</a>, Use <code>news_alerts</code>.</em></strong><br />
-It is a <code>list</code> of <code>tuples(mode, turn, epoch%, info1, info2, info3)</code><br />
+<p><strong><em>In case of <a href="../game_spec.html#game-engine-has-got-your-back-covered">Special Actions of the Game Engine</a>, Use <code>news_alerts</code>.</em></strong><br />
+It is a <code>list</code> of <code>tuples(turn, epoch%, mode, info1, info2, info3)</code><br />
 There are 3 types of such actions:</p>
 <ul>
 <li>
-<p><code>mode == 'w'</code> <strong>Auto-Withdraw</strong>. Incase your server ran out of reserve and engine withdrew a connection.</p>
+<p><code>mode == 'w'</code> <strong>Auto-Withdraw</strong>. In case your server ran out of reserve and engine withdrew a connection.</p>
 <ul>
 <li><code>info1</code> is <code>source</code> ID</li>
 <li><code>info2</code> is <code>sink</code> ID</li>
@@ -1302,7 +1303,7 @@ There are 3 types of such actions:</p>
 </ul>
 </li>
 <li>
-<p><code>mode == 'p'</code> <strong>Server Lost</strong>. Incase you lost a server.</p>
+<p><code>mode == 'p'</code> <strong>Server Lost</strong>. In case you lost a server.</p>
 <ul>
 <li><code>info1</code> is  winner <code>Server.owner</code> ID</li>
 <li><code>info2</code> is  winner <code>Server</code> ID (this doesn&rsquo;t really matter. What would you do with it anyways?)</li>
@@ -1310,7 +1311,7 @@ There are 3 types of such actions:</p>
 </ul>
 </li>
 <li>
-<p><code>mode == 'i'</code> <strong>Insuffecient Resources</strong>. Incase you don&rsquo;t have enough reserve to make a connection, the <a href="/home/ananya/gits/front_saber/front-end/final/game_spec.html#attacking">request will be dropped</a>.</p>
+<p><code>mode == 'i'</code> <strong>Insufficient Resources</strong>. In case you don&rsquo;t have enough reserve to make a connection, the <a href="../game_spec.html#attacking">request will be dropped</a>.</p>
 <ul>
 <li><code>info1</code> is <code>source</code> ID</li>
 <li><code>info2</code> is <code>sink</code> ID</li>
@@ -1330,7 +1331,7 @@ You can still make moves from <code>ServerX</code> but the target can no more be
 </blockquote>
 <p>Validation</p>
 <blockquote>
-<p><code>source_id</code>, <code>sink_id</code> must be integers. <code>arate</code> must be float in the Range defined <a href="/home/ananya/gits/front_saber/front-end/final/game_spec.html#parameter-table">here</a><br />
+<p><code>source_id</code>, <code>sink_id</code> must be integers. <code>arate</code> must be float in the Range defined <a href="../game_spec.html#parameter-table">here</a><br />
 <code>source_id</code> must be owned by <em>&ldquo;this&rdquo;</em> bot, <code>sink_id</code> may or may not be.</p>
 </blockquote>
 <h2 id="update_link"><code>update_link</code></h2>
@@ -1347,7 +1348,7 @@ Same as that of <code>attack</code>, additionally, the connection must exist.</p
 </blockquote>
 <p>Validation<br />
 <code>source_id</code>, <code>sink_id</code> must be integers. The connection must exist. If connection is in <code>making</code> state, the <code>split_ratio</code> is ignored (but is required).<br />
-<code>split_ratio</code> must be a <code>float</code> between <code>0.0</code> and <code>1.0</code>. Say, the current connection length (when you gave the command) is \(L\). You will recieve \(L \times split_ratio\) qubits back. Rest will be forwarded faithfully to the target. They will <code>attack</code> or <code>support</code> it as specified in the <a href="/home/ananya/gits/front_saber/front-end/final/game_spec.html#attacking">Game Spec</a>.</p>
+<code>split_ratio</code> must be a <code>float</code> between <code>0.0</code> and <code>1.0</code>. Say, the current connection length (when you gave the command) is \(L\). You will receive \(L \times split ratio\) qubits back. Rest will be forwarded faithfully to the target. They will <code>attack</code> or <code>support</code> it as specified in the <a href="../game_spec.html#attacking">Game Spec</a>.</p>
 <h1 id="helper-methods"><a name="user-content-helper-methods" href="#helper-methods" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Helper Methods</h1>
 <h2 id="error_dump"><code>error_dump</code></h2>
 <p>Arguments</p>
@@ -1356,8 +1357,8 @@ Same as that of <code>attack</code>, additionally, the connection must exist.</p
 </blockquote>
 <p>This function will dump the string into the <code>stderr</code>. You can open <code>logs/bot0.error.log</code> to view the printout.</p>
 <blockquote>
-<p>Make sure that the argument is a <code>string</code>, not an object or other <code>builtin</code>.<br />
-You can easily convert python&rsquo;s <code>builtin</code> data structures and even the <code>Server</code> and <code>Connection</code> objects into strings like this:<br />
+<p>Make sure that the argument is a <code>string</code>, not an object or other <code>built-in</code>.<br />
+You can easily convert python&rsquo;s <code>built-in</code> data structures and even the <code>Server</code> and <code>Connection</code> objects into strings like this:<br />
 <div class="codehilite"><pre><span class="n">game</span><span class="o">.</span><span class="n">error_dump</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%r</span><span class="s">, </span><span class="si">%d</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="mi">2342</span><span class="p">,</span> <span class="n">game</span><span class="o">.</span><span class="n">Servers</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 <span class="c1"># even &#39;%s&#39; can be used instead of the &#39;%r&#39;</span>
 </pre></div>
@@ -1371,4 +1372,10 @@ You can easily convert python&rsquo;s <code>builtin</code> data structures and e
 <p>Returns</p>
 <blockquote>
 <p>The actual distance between the 2 servers in the game.</p>
-</blockquote></article></body></html>
+</blockquote>
+<h2 id="pretty_dump_deletions-pretty_dump_additions-pretty_dump_alerts"><code>pretty_dump_deletions</code>, <code>pretty_dump_additions</code>, <code>pretty_dump_alerts</code></h2>
+<p>Arguments</p>
+<blockquote>
+<p><code>None</code></p>
+</blockquote>
+<p>These functions will pretty print the <code>notifications</code> onto the <code>error.log</code>. Just add a call at the end of <code>do_turns</code>.</p></article></body></html>

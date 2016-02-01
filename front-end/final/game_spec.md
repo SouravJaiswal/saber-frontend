@@ -1,9 +1,9 @@
 #Story
 
-In the world where Quantum Technology has changed everything, from healthcare services, lifestyle improvements to pervasive IoT and  cryptographical breakthroughs, it also led to extremely intelligent AIs controlling more and more of the World's resources. AIs controlled the internet, the World's utilities, Wireless Sensor Networks, Satellites, and the list went on.
-A growing concern in most academic forums was that the World was relying too much on machines whose exact functioning and capabilities, academia knew little about. They were sceptical of their own creation, and doubted if the machines were really doing our bidding. *That's when this happened. A blackout.*
+In the world where Quantum Technology has changed everything, from health care services, lifestyle improvements to pervasive IoT and cryptographical breakthroughs, it also led to extremely intelligent AIs controlling more and more of the World's resources. AIs controlled the internet, the World's utilities, Wireless Sensor Networks, Satellites, and the list went on.
+A growing concern in most academic forums was that the World was relying too much on machines whose exact functioning and capabilities, academia knew little about. They were skeptical of their own creation, and doubted if the machines were really doing our bidding. *That's when this happened. A blackout.*
 
-Some speculate that a sentinal AI instigated the people and was able to manipulate them to form a faction, which brought the World's internet down. Those speculations are wrong.
+Some speculate that a sentinel AI instigated the people and was able to manipulate them to form a faction, which brought the World's internet down. Those speculations are wrong.
 *We are the Real Voice of the People of the World.*
 *We are not brought forth from the workings of machines, but we are, of pure human will and spirit.*
 We wish to fight the machines and bring true freedom to the populace as we have conclusive proof of the existence and workings of a rouge AI that has caused so many economies to topple.
@@ -19,10 +19,10 @@ All Quantum Servers are equipped with
 * a `Generator Machine` that can "create" qubits
 
 Qubits can be, in lay man's tongue, be *"transmitted"* over the network via special *"links"*. These links are different from the physical network but even they have [BANDWIDTH_LIMITS][3].
-The world-wide atack only crippled the server's computational power but the physical network (of optical fibre, etc) is still functional. Most Quantum Servers have a few qubits but need some help to become operational.
+The world-wide attack only crippled the server's computational power but the physical network (of optical fibre, etc) is still functional. Most Quantum Servers have a few qubits but need some help to become operational.
 
 We have physical access to a few servers (which forms our [`CLUSTER`][2]) around the world from where we will mount our invasive. Now that our goal is clear, we shall discuss our... *path*, so to say.
-Succintly put, sending qubits to other servers will destroy their qubits, and upon complete destruction, the victim machine will be ours. Before we get to the details lets clear some basic terminology.
+Succinctly put, sending qubits to other servers will destroy their qubits, and upon complete destruction, the victim machine will be ours. Before we get to the details lets clear some basic terminology.
 
 [TOC]
 
@@ -30,7 +30,7 @@ Succintly put, sending qubits to other servers will destroy their qubits, and up
 
 ##Cluster
 A Cluster is a collection of servers that can make connections to each other without damaging each other, as they are in *'in-sync'* and owned by a common entity.
-> Practically, your `bot-script` will be given control of a cluster in the beginning. Your aim is to, ofcourse, expand your cluster.
+> Practically, your `bot-script` will be given control of a cluster in the beginning. Your aim is to, of-course, expand your cluster.
 
 ##Computational Power *(Currency of the Game)*
 
@@ -43,7 +43,7 @@ So, some of the qubits reside on the machine (`reserve`) while the rest are `inv
 \\(I_{x.A}\\) denotes `invested`,
 **also note that each server has a UNIQUE_ID, '\\(x\\)'**
 
-Some Quantum Servers are capable of holding more qubits than others. Once the `reserve` hits the `limit`, extra qubits even if recieved or generated are lost. These *"extra"* qubits can be utilised in attacking or `making` connections.
+Some Quantum Servers are capable of holding more qubits than others. Once the `reserve` hits the `limit`, extra qubits even if received or generated are lost. These *"extra"* qubits can be utilised in attacking or `making` connections.
 
 ##Neutral Servers
 
@@ -59,7 +59,7 @@ This is a very cheap way of getting qubits as not only do you get a qubit source
 #Economics of qubits
 
 The `Generator` works ceaselessly to make qubits at the [DEFAULT\_REGEN\_RATE][3].
-The `Isolators` do a good job of maintaining qubits when there is no incoming connection. The attacking qubits not only disrupt it's function but also inflict a fair amount of damage on the system. The damage, ie. loss of qubits is [proportional][4] to the amount of qubits recieved.
+The `Isolators` do a good job of maintaining qubits when there is no incoming connection. The attacking qubits not only disrupt it's function but also inflict a fair amount of damage on the system. The damage, ie. loss of qubits is [proportional][4] to the amount of qubits received.
 
 #Connections
 
@@ -87,7 +87,7 @@ A connection can be in one of 5 states, and [transitions][5] between them are ex
 `hostile`
 :	This type of connection is made only in case of "withdraw". The forwarded qubits travel to the target in this connection.
 > Say \\(S_{x.A}\\) connects to \\(S_{y.D}\\) but then `withdraws` its connection. It asks the network to retrieve \\(60\%\\) of its `investment` and forward the rest to \\(S_{y.D}\\), thereby `attacking`/`supporting` it further.
-This action turns the original connection into `withdrawing` but, a new `hostile` connection is made to \\(S_{y.D}\\). This transports the remaining \\(40\%\\) to \\(S_{y.D}\\) @ [DCSPEED][3], `attcking`/`supporting` it at a rapid rate.
+This action turns the original connection into `withdrawing` but, a new `hostile` connection is made to \\(S_{y.D}\\). This transports the remaining \\(40\%\\) to \\(S_{y.D}\\) @ [DCSPEED][3], `attacking`/`supporting` it at a rapid rate.
 
 ##Transitions
 
@@ -99,8 +99,8 @@ The `bot` cannot operate over `hostile` connections. These are maintained by the
 
 ##Attacking
 
-The `bot` must specify the `ARATE` *(or in case of friendly connection, this is interpreted as `suppor_rate`)*. The connection is started @ the requested turn if the `source` has enough `reserve` @ that turn.
-If attacking an `enemy`, the damage, ie. loss of qubits is proportional ([AMULT][3]) to the amount of qubits recieved.
+The `bot` must specify the `ARATE` *(or in case of friendly connection, this is interpreted as `support_rate`)*. The connection is started @ the requested turn if the `source` has enough `reserve` @ that turn.
+If attacking an `enemy`, the damage, ie. loss of qubits is proportional ([AMULT][3]) to the amount of qubits received.
 $$DPS_{x.A, y.B} = -AMULT \times ARATE$$
 If connected to a friendly server, support it,
 $$SPS_{x.W, y.W} = ARATE$$
@@ -132,7 +132,7 @@ Note that [AMULT][3] multiplier is not applied.
 
 ##Update Link Rate
 
-The `bot` must specify the new`ARATE`! This is the simplest command with obvious useage rules.
+The `bot` must specify the new`ARATE`! This is the simplest command with obvious usage rules.
 
 ##Game Engine has got your back covered!
 
@@ -169,7 +169,7 @@ The winner is determined by simply finding the `Cluster` which attacked at the *
 All active connections of the victim server are `withdrawn` and the returned qubits are owned by the winner. So these "returning" connections don't attack, but they support the newly taken over server.
 
 ##Scoring
-Winner is awarded `10 points` and the Victim, `-5 points`. If the VIctim is `neutral`, no penalty is awarded. This is ***subject to change*** till Feb 8.
+Winner is awarded `10 points` and the Victim, `-5 points`. If the Victim is `neutral`, no penalty is awarded. This is ***subject to change*** till Feb 8.
 
 ##Special Cases
 
@@ -181,7 +181,7 @@ The connection is not completely retracted @ takeover, and the rest of it won't 
 In the same attack as above, unfortunately, while the `hostile` was active and \\(S_{z.H}\\) has not been taken over, the source \\(S_{y.W}\\) got taken over by someone, and hence \\(Cluster_{W}\\) is wiped out (while `hostile` is active).
 Eventually, the `hostile` connection completely damages \\(S_{z.H}\\).
 Even if max-damage is done by this `hostile` connection, winner is **not** \\(Cluster_{W}\\), but \\(Cluster_{H}\\).
-> Moral of this convoluted case is that, cluster cannot hope to be revived by winning a takeover using a `hostile` after **completely** dying. Infact, it did just the opposite of what it intended!
+> Moral of this convoluted case is that, cluster cannot hope to be revived by winning a takeover using a `hostile` after **completely** dying. In fact, it did just the opposite of what it intended!
 
 #Parameter Table
 
@@ -199,7 +199,7 @@ Even if max-damage is done by this `hostile` connection, winner is **not** \\(Cl
 
 #Further Reading
 
-Get started with your bot by downloading the [StarterPack][9]. Read the [Game API][8] and StarterPack Usage Manual.
+Get started with your bot by downloading the [Starter-Pack][9]. Read the [Game API][8] and Starter-Pack Usage Manual.
 
 [1]: #connections
 [2]: #cluster

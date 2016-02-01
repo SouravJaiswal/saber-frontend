@@ -1103,12 +1103,12 @@ MathJax.Hub.Config({
   showProcessingMessages: false
 });
 </script>
-<title>walkthru</title></head><body><article class="markdown-body"><h1 id="quick-start"><a name="user-content-quick-start" href="#quick-start" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quick Start</h1>
-<p>This document is a Walkthrough for the Python Starter Pack. It will guide you through the first time setup.<br />
+<title>Walk Through - python starter</title></head><body><article class="markdown-body"><h1 id="quick-start"><a name="user-content-quick-start" href="#quick-start" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quick Start</h1>
+<p>This document is a Walk-through for the Python Starter Pack. It will guide you through the first time setup.<br />
 First download the <code>all_python-starter_pack</code></p>
 <p>asdfjkaksjdhnoaisdoighoasijdgoijas;doifjgo;iasdjfgiojdsfo;ijgisjdfg  DOWNLOAD BUTTON</p>
 <p>Unpack the package anywhere on your machine.<br />
-Most linuxes have GUI utilities for upacking <code>.tar.xz</code> by default. You can also do it on the command line, but don&rsquo;t forget to <code>cd</code> into the right directory.</p>
+Most Linuxes have GUI utilities for unpacking <code>.tar.xz</code> by default. You can also do it on the command line, but don&rsquo;t forget to <code>cd</code> into the right directory.</p>
 <div class="codehilite"><pre><span class="nv">$ </span>unzip -u <span class="o">{</span>tar-name<span class="o">}</span>
 </pre></div>
 
@@ -1119,17 +1119,17 @@ Most linuxes have GUI utilities for upacking <code>.tar.xz</code> by default. Yo
 </pre></div>
 <br />
 You should get something similar to the image below on your terminal. <em>This may change as the game engine is updated.</em></p>
-<p><img alt="snapshot of launch.sh" src="images/docs/taken-over-launch.png" /></p>
+<p><img alt="snapshot of launch.sh" src="../images/docs/taken-over-launch.png" /></p>
 <p>Instead of us explaining what happened in the Game, how about you <em>see</em> the Game? Open a file explorer and go to the <code>game-ui</code> folder. Open <code>view-game.html</code> in your browser and lo, behold!</p>
 <h2 id="what-did-launchsh-do"><a name="user-content-what-did-launchsh-do" href="#what-did-launchsh-do" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What did <code>launch.sh</code> do?</h2>
 <p>See the contents of directory <code>mybots</code>. This directory will hold your AI script.<br />
 See the contents of directory <code>samples</code>. This directory holds <code>sample-AIs</code>.<br />
 Open <code>config.ini</code>. This file is read to configure the Game. This time it ran a Game in <code>test.map</code> with:</p>
-<p><img alt="Map Detail snapshot of launch.sh" src="images/docs/launch_detail_mini.png" /></p>
+<p><img alt="Map Detail snapshot of launch.sh" src="../images/docs/launch_detail_mini.png" /></p>
 <p>The <code>use</code> attribute under the Section <code>[Samples]</code> decides which sample bots are used to populate other clusters.<br />
 <code>turns</code> decides the duration of the game.<br />
-For any clarifications, read the <a href="python/manual.php">Manual</a> and if that doesn&rsquo;t satisfy you, feel free to contact us.</p>
-<p><img alt="config.ini" src="images/docs/wt_config.png" /></p>
+For any clarifications, read the <a href="manual.php">Manual</a> and if that doesn&rsquo;t satisfy you, feel free to contact us.</p>
+<p><img alt="config.ini" src="../images/docs/wt_config.png" /></p>
 <p>Coming back to the output on the terminal, you can see the details about the bots used in the current map.<br />
 In the <code>DEBUG</code> section, you can see the Game State at the last turn of the match.</p>
 <div class="codehilite"><pre>status: [&#39;survived&#39;,&#39;eliminated&#39;]
@@ -1137,7 +1137,7 @@ In the <code>DEBUG</code> section, you can see the Game State at the last turn o
 
 
 <blockquote>
-<p>This means that <code>bot0</code> survived the match while <code>bot1</code> was eliminated at some point. Other possibilites are <code>{'timeout', 'crashed'}</code></p>
+<p>This means that <code>bot0</code> survived the match while <code>bot1</code> was eliminated at some point. Other possibilities are <code>{'timeout', 'crashed'}</code></p>
 </blockquote>
 <div class="codehilite"><pre><span class="n">game_length</span> <span class="o">:</span> <span class="mi">100</span>
 </pre></div>
@@ -1151,7 +1151,7 @@ In the <code>DEBUG</code> section, you can see the Game State at the last turn o
 
 
 <blockquote>
-<p>Points earned by the bots. See <a href="game_spec.html#scoring">Point System</a></p>
+<p>Points earned by the bots. See <a href="../game_spec.html#scoring">Point System</a></p>
 </blockquote>
 <div class="codehilite"><pre>player_turns : [100, 58]
 </pre></div>
@@ -1182,6 +1182,6 @@ Set <code>turns</code> to <code>50</code><br />
 The <code>sample</code> section will play a big role in your bot&rsquo;s development as you can enter your bot in the arena against other sample bots.<br />
 The big bonus is that you can even edit the sample bots! So, theoretically, this pack does not hinder your bot development in any way (except availability of maps)! You cannot add new files, though. The <code>use</code> attribute only recognises the pre-registered file-names <em>(but does not check their contents)</em>.<br />
 If you wish to, you <em>can</em> run your bot against instances of itself by setting <code>use</code> to <code>none</code>! That should be an amusing sight in itself but could also be used by machine learning enthusiasts!<br />
-Refer <a href="python/manual.php#config">Configuring Game</a></p>
+Refer <a href="manual.php#config">Configuring Game</a></p>
 <h2 id="next-steps"><a name="user-content-next-steps" href="#next-steps" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Next Steps</h2>
-<p>These were the baby steps. Read the <a href="game_spec.html">Game Specification</a> and refer the <a href="python/manual.php">User Manual</a> and <a href="api_python.html">Game API</a></p></article></body></html>
+<p>These were the baby steps. Read the <a href="../game_spec.html">Game Specification</a> and refer the <a href="manual.php">User Manual</a> and <a href="api_python.html">Game API</a></p></article></body></html>

@@ -3,7 +3,7 @@
 You have to edit the `bot_template.py` in `mybots/`. This file uses `Quantum.py` to manage the game state. `Quantum.py` is an interface to the actual Game Engine.
 Since your bot is provided with an interface to the Game Engine, all your bot needs to do is use the API to make Game [*"Move"*][move-calls] calls.
 **Your bot's `stdout` is used to communicate with the Game Engine. Do not use print statements in your code _(else game will fail)_**.
-Incase you want to print anything for debugging, use `stderr`. There is a [helper method][error_dump] for this.
+In case you want to print anything for debugging, use `stderr`. There is a [helper method][error_dump] for this.
 
 ```py
 #!/usr/bin/env python
@@ -38,7 +38,7 @@ At the beginning of every turn, `game-state` is updated by `Quantum.py` and `do_
 
 #Game State Object
 
-This is a pretty large object defined in `Quantum.py`. Acces attributes like this:
+This is a pretty large object defined in `Quantum.py`. Access attributes like this:
 ```py
 game.error_dump(game.turn)
 game.error_dump(game.Clusters[game.my_id])
@@ -125,7 +125,7 @@ These objects get created and destroyed by your and the Game Engine's actions. S
 > In case of any such deletion in between turns, you can read the [`notification`][notifs] objects to get information on why the action was taken by the Game Engine.
 
 attacker
-:	Atacker Server ID `int`
+:	Attacker Server ID `int`
 The `Server ID` of the creator and owner of this Connection. Also called the `source` ID.
 
 victim
@@ -163,32 +163,32 @@ These lists will be filled with notifications from the Game Engine at every turn
 game.error_dump(game.news_additions)
 ```
 
-* Incase of any Connection Objects that were deleted in-between turns
+* In case of any Connection Objects that were deleted in-between turns
 `news_deletions`
 :	`list` of `tuples(epoch%, source, sink, state)`
->`epoch%` is a `float` that points out the exact time of the incident. Interpret as *"previous turn_no + `epoch%` * time betwween 2 turns"*. Note that time between 2 turns is fixed and not same as `game.turntime`.
+>`epoch%` is a `float` that points out the exact time of the incident. Interpret as *"previous turn_no + `epoch%` * time between 2 turns"*. Note that time between 2 turns is fixed and not same as `game.turntime`.
 Other arguments give more information about the `Connection` object that got deleted.
 **Remember that `sink` can be `string`.**
 
-* Incase of new Connection objects created. New objects are necessarily created only at beginning of the turns. Hence `epoch%` is `0.0`.
+* In case of new Connection objects created. New objects are necessarily created only at beginning of the turns. Hence `epoch%` is `0.0`.
 `news_additions`
 :	`list` of `tuples(source, sink, arate, full_distance, state)`
 > **Remember that `sink` can be `string`.**
 
-* ***Incase of [Special Actions of the Game Engine][protect], Use `news_alerts`.***
-It is a `list` of `tuples(mode, turn, epoch%, info1, info2, info3)`
+* ***In case of [Special Actions of the Game Engine][protect], Use `news_alerts`.***
+It is a `list` of `tuples(turn, epoch%, mode, info1, info2, info3)`
 There are 3 types of such actions:
-	+ `mode == 'w'` **Auto-Withdraw**. Incase your server ran out of reserve and engine withdrew a connection.
+	+ `mode == 'w'` **Auto-Withdraw**. In case your server ran out of reserve and engine withdrew a connection.
 		+ `info1` is `source` ID
 		+ `info2` is `sink` ID
 		+ `info3` is `state` of the connection before `withdrawing` it.
 
-	+ `mode == 'p'` **Server Lost**. Incase you lost a server.
+	+ `mode == 'p'` **Server Lost**. In case you lost a server.
 		+ `info1` is  winner `Server.owner` ID
 		+ `info2` is  winner `Server` ID (this doesn't really matter. What would you do with it anyways?)
 		+ `info3` is  `Server` ID of the lost `Server`.
 
-	+ `mode == 'i'` **Insuffecient Resources**. Incase you don't have enough reserve to make a connection, the [request will be dropped][specs-attack].
+	+ `mode == 'i'` **Insufficient Resources**. In case you don't have enough reserve to make a connection, the [request will be dropped][specs-attack].
 		+ `info1` is `source` ID
 		+ `info2` is `sink` ID
 		+ `info3` is the required `reserve` for such a request to be implemented.
@@ -222,7 +222,7 @@ Arguments
 
 Validation
 `source_id`, `sink_id` must be integers. The connection must exist. If connection is in `making` state, the `split_ratio` is ignored (but is required).
-`split_ratio` must be a `float` between `0.0` and `1.0`. Say, the current connection length (when you gave the command) is \\(L\\). You will recieve \\(L \times split_ratio\\) qubits back. Rest will be forwarded faithfully to the target. They will `attack` or `support` it as specified in the [Game Spec][specs-attack].
+`split_ratio` must be a `float` between `0.0` and `1.0`. Say, the current connection length (when you gave the command) is \\(L\\). You will receive \\(L \times split ratio\\) qubits back. Rest will be forwarded faithfully to the target. They will `attack` or `support` it as specified in the [Game Spec][specs-attack].
 
 #Helper Methods
 
@@ -232,8 +232,8 @@ Arguments
 > `string`
 
 This function will dump the string into the `stderr`. You can open `logs/bot0.error.log` to view the printout.
-> Make sure that the argument is a `string`, not an object or other `builtin`.
-You can easily convert python's `builtin` data structures and even the `Server` and `Connection` objects into strings like this:
+> Make sure that the argument is a `string`, not an object or other `built-in`.
+You can easily convert python's `built-in` data structures and even the `Server` and `Connection` objects into strings like this:
 ```py
 game.error_dump("%r, %d\n%s\n" % ([1,2,3], 2342, game.Servers[0]))
 # even '%s' can be used instead of the '%r'
@@ -246,6 +246,13 @@ Arguments
 
 Returns
 > The actual distance between the 2 servers in the game.
+
+##`pretty_dump_deletions`, `pretty_dump_additions`, `pretty_dump_alerts`
+
+Arguments
+> `None`
+
+These functions will pretty print the `notifications` onto the `error.log`. Just add a call at the end of `do_turns`.
 
 [move-calls]: #moves
 [server]: #server

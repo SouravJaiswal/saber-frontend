@@ -1,11 +1,11 @@
 #User Manual
 
-This document contains instructions and tips in using the StarterPacks. For Game Specification head over [here][2].
-See the [walkthrough][1] for a guided tour of the features and usage of the StarterPack.
+This document contains instructions and tips in using the Starter-packs. For Game Specification head over [here][2].
+See the [Walk-through][1] for a guided tour of the features and usage of the Starter-pack.
 
-Choose your preffered language : `Python` `C` `C++`
+Choose your preferred language : `Python` `C` `C++`
 
-> We are extremely sorry that the `C` and `C++` starter packs are not ready yet. They should be deployed by the end of this week (Jan 30). In the meantime, if you know a bit of python you can atleast get familiar with the game, take your bot for a spin. Download the pack and unpack into any folder.
+> We are extremely sorry that the `C` and `C++` starter packs are not ready yet. They should be deployed by the end of this week (Jan 30). In the meantime, if you know a bit of python you can at least get familiar with the game, take your bot for a spin. Download the pack and unpack into any folder.
 
 ##Download the Pack
 
@@ -23,7 +23,7 @@ DOWNLOAD BUTTON
 base address == https://goo.gl/ToXztS
 ###Unpacking
 
-Most linuxes have GUI utilities for upacking `.tar.xz` by default. You can also do it on the command line, but don't forget to `cd` into the right directory.
+Most Linuxes have GUI utilities for unpacking `.tar.xz` by default. You can also do it on the command line, but don't forget to `cd` into the right directory.
 ```
 $ unzip -u {tar-name}
 ```
@@ -57,7 +57,7 @@ launch.sh
 
 ##Usage
 
-Write your AI script in python *(3.X prefferably, though 2.7 is supported)* and save it in `mybot`.
+Write your AI script in python *(3.X preferably, though 2.7 is supported)* and save it in `mybot`.
 
 ###Configure the System
 

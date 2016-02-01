@@ -1,13 +1,13 @@
 Quick Start
 ===========
 
-This document is a Walkthrough for the Python Starter Pack. It will guide you through the first time setup.
+This document is a Walk-through for the Python Starter Pack. It will guide you through the first time setup.
 First download the `all_python-starter_pack`
 
 asdfjkaksjdhnoaisdoighoasijdgoijas;doifjgo;iasdjfgiojdsfo;ijgisjdfg  DOWNLOAD BUTTON
 
 Unpack the package anywhere on your machine.
-Most linuxes have GUI utilities for upacking `.tar.xz` by default. You can also do it on the command line, but don't forget to `cd` into the right directory.
+Most Linuxes have GUI utilities for unpacking `.tar.xz` by default. You can also do it on the command line, but don't forget to `cd` into the right directory.
 
 ```
 $ unzip -u {tar-name}
@@ -46,7 +46,7 @@ In the `DEBUG` section, you can see the Game State at the last turn of the match
 ```
 status: ['survived','eliminated']
 ```
-> This means that `bot0` survived the match while `bot1` was eliminated at some point. Other possibilites are `{'timeout', 'crashed'}`
+> This means that `bot0` survived the match while `bot1` was eliminated at some point. Other possibilities are `{'timeout', 'crashed'}`
 
 ```
 game_length : 100

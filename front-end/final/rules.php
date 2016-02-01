@@ -48,7 +48,7 @@ include 'includes/header.php'; ?>
 				    <div id="prize">
 				        <h1>Prizes</h1>
 
-				        <p>Prize may not completely be in cash. Our means of prize distribution will be finalised and expressed here by <b>Jan 24</b>.</p>
+				        <p>Prize may not completely be in cash. Our means of prize distribution will be finalised and expressed here by <b>Feb 8</b>.</p>
 				    </div>
 				</div>
 			</section>

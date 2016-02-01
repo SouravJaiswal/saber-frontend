@@ -1103,71 +1103,85 @@ MathJax.Hub.Config({
   showProcessingMessages: false
 });
 </script>
-<title>Manual</title></head><body><article class="markdown-body"><h1 id="user-manual"><a name="user-content-user-manual" href="#user-manual" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>User Manual</h1>
-<p>This document contains instructions and tips in using the StarterPacks. For Game Specification head over <a href="gamespec.html">here</a>.</p>
-<h2 id="installation"><a name="user-content-installation" href="#installation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installation</h2>
-<p>Choose your preffered language : <code>Python</code> <code>C</code> <code>C++</code><br />
-See the <a href="walk_the_talk.php?chosen_lang=" title="python">walkthrough</a> for a guided tour of the features and usage of the StarterPack.</p>
-<blockquote>
-<p>We are extremely sorry that the <code>C</code> and <code>C++</code> starter packs are not ready yet. They should be deployed by the end of this week (Jan 30). In the meantime, if you know a bit of python you can atleast get familiar with the game, take your bot for a spin. Download the pack and unpack into any folder.</p>
-</blockquote>
-<p>DOWNLOAD BUTTON<br />
-base address == <a href="https://bob16.pythonanywhere.com/media/starter_packs">https://bob16.pythonanywhere.com/media/starter_packs</a></p>
-<h2 id="directory-structure"><a name="user-content-directory-structure" href="#directory-structure" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Directory Structure</h2>
-<div class="codehilite"><pre>saber/
-js/
-logs/
-
-maps/
-mybot/
-samples/
-arena/
-
-config.ini
-launch.sh
+<title>walkthru</title></head><body><article class="markdown-body"><h1 id="quick-start"><a name="user-content-quick-start" href="#quick-start" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quick Start</h1>
+<p>This document is a Walkthrough for the Python Starter Pack. It will guide you through the first time setup.<br />
+First download the <code>all_python-starter_pack</code></p>
+<p>asdfjkaksjdhnoaisdoighoasijdgoijas;doifjgo;iasdjfgiojdsfo;ijgisjdfg  DOWNLOAD BUTTON</p>
+<p>Unpack the package anywhere on your machine.<br />
+Most linuxes have GUI utilities for upacking <code>.tar.xz</code> by default. You can also do it on the command line, but don&rsquo;t forget to <code>cd</code> into the right directory.</p>
+<div class="codehilite"><pre><span class="nv">$ </span>unzip -u <span class="o">{</span>tar-name<span class="o">}</span>
 </pre></div>
 
 
-<ul>
-<li>The path to the packaged executable <em>(which we call <code>saber</code>)</em> is <code>saber/saber</code>.</li>
-<li><code>maps/</code> contains a few Scenarios that you can use for testing.</li>
-<li><code>samples/</code> has a few sample bots (that are extremely dumb). You can pitch <code>mybot</code> against them.</li>
-<li><code>mybot/</code> contains your AI script. Ignore the <code>Quantum.py</code> and <code>util.py</code>. You can read them, but you&rsquo;ll gain little useful information.</li>
-<li><code>logs</code> will contain the comprehensive Game logs which you can use to squash those nasty bugs and comb out errors.</li>
-<li><code>game-ui/</code> contains the visualisation of the game that you can launch by opening <code>game-ui/view-game.html</code> in your browser. You must enable <code>javascript</code>.</li>
-</ul>
-<h2 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h2>
-<p>Write your AI script in python <em>(3 prefferably, though 2.7 is supported)</em> and save it in <code>mybot</code>.</p>
-<h3 id="configure-the-system"><a name="user-content-configure-the-system" href="#configure-the-system" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configure the System</h3>
-<p>Edit <code>config.ini</code> and change the bot <code>name</code>, you can also specify the <code>map</code> you want to use.<br />
-You cannot <em>preview</em> the map. Run a game to see the map.</p>
-<blockquote>
-<p>Some maps have many participating bots!</p>
-</blockquote>
-<ul>
-<li>Read the instructions in <code>config.ini</code> to correctly specify the bots you want play against.</li>
-</ul>
-<p><center><img alt="config-file-img" src="/home/ananya/gits/front_saber/front-end/final/images/docs/config.png" title="configuration file" /></center></p>
-<blockquote>
-<p><strong>Why do I need to specify the python version I&rsquo;m using?</strong><br />
-A <code>python 3.5.1</code> interpreter is embedded in this starter pack. If you use version <code>3.X</code>, the inbuilt interpreter will run the script. Otherwise, you must have a working installation of python <code>2.7.X</code> on your machine.</p>
-</blockquote>
-<h3 id="launch-a-game"><a name="user-content-launch-a-game" href="#launch-a-game" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Launch a game</h3>
-<p>Fire up your terminal and navigate to the directory where you unpacked the starter-pack and invoke<br />
-<div class="codehilite"><pre><span class="nv">$ </span>bash ./launch.sh
+<p>Fire up your terminal and type in these commands to launch a Game:</p>
+<p><div class="codehilite"><pre><span class="nv">$ </span><span class="nb">cd</span> &lt;unpack-directory-path&gt;
+<span class="nv">$ </span>bash ./launch.sh 
 </pre></div>
 <br />
-That&rsquo;s it, you&rsquo;re done! You can see some of the ending Game-Statistics on the console.<br />
-The logs will have been dumped into <code>logs</code>.</p>
-<h3 id="visualising-and-debugging"><a name="user-content-visualising-and-debugging" href="#visualising-and-debugging" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Visualising and Debugging</h3>
-<p>You can now visualise the game by opening <code>game-ui/view-game.html</code> in your browser. You must enable <code>javascript</code>.</p>
-<p>If you see your bot act in an unexpected manner, view the input and output logs for your bot. By default, your script is dubbed as <code>bot0</code>. You can use any text-editor for opening the <code>.log</code> files <em>(they&rsquo;re just </em><code>plain-text</code><em>)</em>.<br />
-<code>game_log.rX.log</code> has complete game-state at each turn.</p>
-<p><center><img alt="log-list-img" src="/home/ananya/gits/front_saber/front-end/final/images/docs/logs.png" title="List of log-file. Use bot0* files" /></center></p>
-<h2 id="errors-and-getting-help"><a name="user-content-errors-and-getting-help" href="#errors-and-getting-help" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Errors and Getting Help</h2>
-<p>You tried everything to fix the game on your side but you now suspect that the fault is in the Game Engine. Just send us a mail that describes the issue and attach a <code>.zip</code> or <code>.tarX</code> that includes,<br />
-<em> <code>logs/</code><br />
-</em> <code>config.ini</code><br />
-We&rsquo;ll get back to you with an explanation and if it really is a mistake on our side, we&rsquo;ll fix and redistribute the starter-pack. So, we request you to stay tuned to the <a href="/home/ananya/gits/front_saber/front-end/final/index.php#news">news</a>. The API or Game Specification is unlikely to change and hence your AI script would not require any change.</p>
-<h1 id="note"><a name="user-content-note" href="#note" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Note</h1>
-<p>We have exposed a lot of the Game Engine by providing you with an executable. You can try editing it, or try to understand it but we can assure you nothing good will come of it. We will only take the file you have created in <code>mybot/</code> and use our local copy of the engine. Hence, your effort might be in vain. After the event is over, Game Engine source-code might be released. Sit tight till then! :D</p></article></body></html>
+You should get something similar to the image below on your terminal. <em>This may change as the game engine is updated.</em></p>
+<p><img alt="snapshot of launch.sh" src="images/docs/taken-over-launch.png" /></p>
+<p>Instead of us explaining what happened in the Game, how about you <em>see</em> the Game? Open a file explorer and go to the <code>game-ui</code> folder. Open <code>view-game.html</code> in your browser and lo, behold!</p>
+<h2 id="what-did-launchsh-do"><a name="user-content-what-did-launchsh-do" href="#what-did-launchsh-do" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What did <code>launch.sh</code> do?</h2>
+<p>See the contents of directory <code>mybots</code>. This directory will hold your AI script.<br />
+See the contents of directory <code>samples</code>. This directory holds <code>sample-AIs</code>.<br />
+Open <code>config.ini</code>. This file is read to configure the Game. This time it ran a Game in <code>test.map</code> with:</p>
+<p><img alt="Map Detail snapshot of launch.sh" src="images/docs/launch_detail_mini.png" /></p>
+<p>The <code>use</code> attribute under the Section <code>[Samples]</code> decides which sample bots are used to populate other clusters.<br />
+<code>turns</code> decides the duration of the game.<br />
+For any clarifications, read the <a href="python/manual.php">Manual</a> and if that doesn&rsquo;t satisfy you, feel free to contact us.</p>
+<p><img alt="config.ini" src="images/docs/wt_config.png" /></p>
+<p>Coming back to the output on the terminal, you can see the details about the bots used in the current map.<br />
+In the <code>DEBUG</code> section, you can see the Game State at the last turn of the match.</p>
+<div class="codehilite"><pre>status: [&#39;survived&#39;,&#39;eliminated&#39;]
+</pre></div>
+
+
+<blockquote>
+<p>This means that <code>bot0</code> survived the match while <code>bot1</code> was eliminated at some point. Other possibilites are <code>{'timeout', 'crashed'}</code></p>
+</blockquote>
+<div class="codehilite"><pre><span class="n">game_length</span> <span class="o">:</span> <span class="mi">100</span>
+</pre></div>
+
+
+<blockquote>
+<p>No. of turns in this match.</p>
+</blockquote>
+<div class="codehilite"><pre>score : [0,0]
+</pre></div>
+
+
+<blockquote>
+<p>Points earned by the bots. See <a href="game_spec.html#scoring">Point System</a></p>
+</blockquote>
+<div class="codehilite"><pre>player_turns : [100, 58]
+</pre></div>
+
+
+<blockquote>
+<p>No of turns each player lasted.</p>
+</blockquote>
+<h2 id="make-your-bot-better"><a name="user-content-make-your-bot-better" href="#make-your-bot-better" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Make Your Bot better</h2>
+<p>Lets do something about our bot, it does absolutely nothing right now. Just sits there waiting to be gobbled up.<br />
+First of all, change the file name to something cool, say, <code>blazing-knight.py</code>.<br />
+Open this file in your text editor and make these changes:</p>
+<div class="codehilite"><pre>    <span class="k">def</span> <span class="nf">do_turn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">game</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">game</span><span class="o">.</span><span class="n">turn</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">game</span><span class="o">.</span><span class="n">attack</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">game</span><span class="o">.</span><span class="n">turn</span> <span class="o">==</span> <span class="mi">15</span><span class="p">:</span>
+            <span class="n">game</span><span class="o">.</span><span class="n">attack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span>
+            <span class="n">game</span><span class="o">.</span><span class="n">update_link</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Try running a game now, your bot would now attack a <code>neutral-server</code> @turn 15. Eventually, your bot (black) will win!<br />
+Read the <a href="api_python.html">Game API</a> to know how exactly to command your bot and how to utilise the variable <code>game</code>.</p>
+<h2 id="configure"><a name="user-content-configure" href="#configure" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configure</h2>
+<p>Edit the config.ini file to set your AI script <code>blazing-knight.py</code> (that you want to use in this game) to the <code>name</code> attribute.<br />
+Leave the python version and map as is.<br />
+Set <code>turns</code> to <code>50</code><br />
+The <code>sample</code> section will play a big role in your bot&rsquo;s development as you can enter your bot in the arena against other sample bots.<br />
+The big bonus is that you can even edit the sample bots! So, theoretically, this pack does not hinder your bot development in any way (except availability of maps)! You cannot add new files, though. The <code>use</code> attribute only recognises the pre-registered file-names <em>(but does not check their contents)</em>.<br />
+If you wish to, you <em>can</em> run your bot against instances of itself by setting <code>use</code> to <code>none</code>! That should be an amusing sight in itself but could also be used by machine learning enthusiasts!<br />
+Refer <a href="python/manual.php#config">Configuring Game</a></p>
+<h2 id="next-steps"><a name="user-content-next-steps" href="#next-steps" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Next Steps</h2>
+<p>These were the baby steps. Read the <a href="game_spec.html">Game Specification</a> and refer the <a href="python/manual.php">User Manual</a> and <a href="api_python.html">Game API</a></p></article></body></html>

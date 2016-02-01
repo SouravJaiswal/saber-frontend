@@ -35,18 +35,21 @@ include 'includes/header.php'; ?>
 				<div class="inner">
 					<ul class="features">
 						<li class="icon fa-file-text">
-							<h3><a href="rules.html">RULES</a></h3>
+							<h3><a href="rules.php">RULES</a></h3>
 							<p>Competition guidelines, policies and other mundane stuff</p>
 						</li>
+						<li class="icon ">
+							<h3><a href="game_spec.html">THE GAME</a></h3>
+							<p>Read about the Game and it's Scenario.</p>
+						</li>
 						<li class="icon fa-globe">
-							<h3><a href="explore.html">EXPLORE</a></h3>
+							<h3><a href="explore.php">EXPLORE</a></h3>
 							<p>Checkout other AI challenges, AI programming and hints about the game which bob will host!</p>
 						</li>
 						<li class="icon fa-gift">
-							<h3><a href="#">PRIZES</a></h3>
-							<p>Win immortal fame and prizes worth<a href="rules.html#prize">*</a><h4 id="prizes">INR 23K!</h4></p>
+							<h3><a href="rules.php#prize">PRIZES</a></h3>
+							<p>Win immortal fame and prizes worth<a href="rules.php#prize">*</a><h4 id="prizes">INR 23K!</h4></p>
 						</li>
-						
 					</ul>
 				</div>
 			</section>
@@ -64,14 +67,14 @@ include 'includes/header.php'; ?>
 			<section class="spotlight">
 				<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
 				<h2>GET A STARTER PACK</h2>
-				<p>Now that your team is all set, read the <a href="#" title="To be released on Jan 24">Game Specifications</a> and choose your preffered language from <code>C, C++, python</code>.<br>
-				Using our starter packs you can get a basic (though dumb) AI in under 15 minutes!</p>
+				<p>Now that your team is all set, read the <a href="game_spec.php" title="Released on Jan 31">Game Specifications</a> and choose your preffered language from <code>C, C++, python</code>.<br>
+				Using our <a href="downloads.php">starter packs</a> you can get a basic (though dumb) AI in under 15 minutes!</p>
 			</div>
 		</section>
 		<section class="spotlight">
 			<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
 			<h2>START HACKING AWAY TO GLORY!</h2>
-			<p>Take your time in cooking up a cunning strategy and implementing it. Submit it to bob and see how your bot fares in our Arena! Not satisfied, just repeat!</p>
+			<p>Take your time in cooking up a cunning strategy and implementing it. Run-Test-Debug the bot, locally!</p>
 		</div>
 	</section>
 </section>
@@ -84,28 +87,48 @@ include 'includes/header.php'; ?>
 							
 							<br class="clear">
 							<div class="timeline-wrapper">
-								<h2 class="milestone"><span>24 Jan</span></h2>
+								<h2 class="milestone"><span>31 Jan</span></h2>
 								<dl class="timeline-series">
 									<dt id="born" class="timeline-event"><a>Event launch! Game materials will be released.</a></dt>
 									<dd class="timeline-event-content" id="bornEX">
-									<p>Game Spec, API, starter packs and documentation will be released. Bots can be submitted for testing and practice in the arena.</p>
+									<p>Game Spec, API, starter packs and documentation will be released.</p>
 									<br class="clear">
 									</dd><!-- /.timeline-event-content -->
 									</dl><!-- /.timeline-series -->
-									</div><!-- /.timeline-wrapper -->
-									<div class="timeline-wrapper">
-										<h2 class="milestone"><span>Feb 3<sup style="text-transform: lowercase">rd</sup> Week</span></h2>
-										<dl class="timeline-series">
-											<dt id="realized" class="timeline-event"><a>Nightly rounds will be held.</a></dt>
-											<dd class="timeline-event-content" id="realizedEX">
-											<p><span class="bob">BoB</span> will host tournaments every night to calibrate the leaderboards. Submissions will be open till 14<sup>th</sup> Feb.</p>
-											<br class="clear">
-											</dd><!-- /.timeline-event-content -->
-											</dl><!-- /.timeline-series -->
-											</div><!-- /.timeline-wrapper -->
-															<br class="clear">
-														</div>
-														</div><!-- /.container -->
+							</div><!-- /.timeline-wrapper -->
+							<div class="timeline-wrapper">
+								<h2 class="milestone"><span>Feb 4</span></h2>
+								<dl class="timeline-series">
+									<dt id="realized" class="timeline-event"><a>Submissions will open.</a></dt>
+									<dd class="timeline-event-content" id="realizedEX">
+									<p><span class="bob">BoB</span> will accept submissions and host tournaments every night to calibrate the leaderboards.</p>
+									<br class="clear">
+									</dd><!-- /.timeline-event-content -->
+									</dl><!-- /.timeline-series -->
+							</div><!-- /.timeline-wrapper -->
+							<div class="timeline-wrapper">
+								<h2 class="milestone"><span>Feb 8</span></h2>
+								<dl class="timeline-series">
+									<dt id="realized" class="timeline-event"><a>Nightly Tournaments on <span class="bob">BoB</span></a></dt>
+									<dd class="timeline-event-content" id="realizedEX">
+									<p>Tournaments will be run amongst the submitted bots every night to calibrate the leaderboards. Submissions will still be open</p>
+									<br class="clear">
+									</dd><!-- /.timeline-event-content -->
+									</dl><!-- /.timeline-series -->
+							</div><!-- /.timeline-wrapper -->
+							<div class="timeline-wrapper">
+								<h2 class="milestone"><span>Feb 15 - Feb 17</span></h2>
+								<dl class="timeline-series">
+									<dt id="realized" class="timeline-event"><a>Final rounds.</a></dt>
+									<dd class="timeline-event-content" id="realizedEX">
+									<p>Submissions will be closed and everyon will be able to view other's games too.</p>
+									<br class="clear">
+									</dd><!-- /.timeline-event-content -->
+									</dl><!-- /.timeline-series -->
+							</div><!-- /.timeline-wrapper -->
+			<br class="clear">
+		</div>
+	</div><!-- /.container -->
 													
 	</div>
 </section>
@@ -113,33 +136,36 @@ include 'includes/header.php'; ?>
 <h3 id="news"><a href="#news">News</a></h3>
 	<div class="inner" >
 		<div id="bob-container">
-                    <ul id="bob">
-                        <li data-infos="The website has been released! Stay tuned for updates and join our Facebook page.">
-                            <i class="fa fa-fw fa-play state"></i>
-                            <span class="hour">Jan 15</span> First Release!
-                        </li>
-                        <li data-infos="The curtains from the event and game specification will be drawn apart on Jan 24, be sure to come here to register and start coding!">
-                            <i class="fa fa-fw fa-play state"></i>
-                            <span class="hour">Jan 16</span> Game Spec to be released on Jan 24
-                        </li>
-                    </ul>
-                    <div id="bob-infos-container">
-                        <div id="bob-infos-triangle"></div>
-                            <div id="bob-infos" class="row">
-                                <div class="col-xs-4 centered">
-                                    <div class="infos-hour">
-                                        Jan 15
-                                    </div>
-                                    <i class="fa fa-arrow-left" id="bob-prev"></i>
-                                    <i class="fa fa-arrow-right" id="bob-next"></i>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="infos-text">The website has been released! Stay tuned for updates and join our Facebook page.</div>
-                                </div>
+            <ul id="bob">
+                <li data-infos="The website has been released! Stay tuned for updates and join our Facebook page.">
+                    <i class="fa fa-fw fa-play state"></i>
+                    <span class="hour">Jan 15</span> First Release!
+                </li>
+                <li data-infos="The curtains from the event and game specification will be drawn apart on Jan 31, be sure to come here to register and start coding!">
+                    <i class="fa fa-fw fa-play state"></i>
+                    <span class="hour">Jan 16</span> Game Spec to be released on Jan 24
+                </li>
+                <li data-infos="After a long wait, finally, we bring to you the Game you've heard so much about.">
+                    <i class="fa fa-fw fa-play state"></i>
+                    <span class="hour">Jan 31</span> Game Specification, Game API and Python Starter Pack released!
+                </li>
+            </ul>
+            <div id="bob-infos-container">
+                <div id="bob-infos-triangle"></div>
+                    <div id="bob-infos" class="row">
+                        <div class="col-xs-4 centered">
+                            <div class="infos-hour">
+                                Jan 15
                             </div>
+                            <i class="fa fa-arrow-left" id="bob-prev"></i>
+                            <i class="fa fa-arrow-right" id="bob-next"></i>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="infos-text">The website has been released! Stay tuned for updates and join our Facebook page.</div>
                         </div>
                     </div>
-                </div>
+        	</div>
+		</div>
 	</div>
 </section>
 

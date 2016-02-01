@@ -2,7 +2,7 @@
 
 $page_title = "Manual";
 
-include 'includes/header.php'; ?>
+include '../includes/header.php'; ?>
 			<!-- Main -->
 			<article id="main">
 				<header>
@@ -47,9 +47,9 @@ See the <a href="https://bob16.pythonanywhere.com/media/changelog.txt">changelog
 						<p>
 							You need to unpack the <code>utilities</code> tar inside the <code>Engine</code> or <code>Full</code> tar.
 						</p>
-						<h2>
+						<h1>
 							Directory Structure
-						</h2>
+						</h1>
 						<hr>
 						<p>
 							If your directory looks like this, you’re good to go.
@@ -78,9 +78,9 @@ See the <a href="https://bob16.pythonanywhere.com/media/changelog.txt">changelog
 						</ul></p>
 						<h1>Usage</h1>
 						<p>
-							Write your AI script in python <i>(3.X prefferably, though 2.7 is supported)</i> and save it in <code>mybot</code>.
+							Write your AI script in python <i>(3.X prefferably, though 2.7 is supported)</i> and save it in mybot.
 						</p>
-						<h3 id="config">Configure the System</h3>
+						<h2>Configure the System</h2>
 						<p>
 							Edit <code>config.ini</code> and change the bot <code>name</code>, you can also specify the <code>map</code> you want to use.
 							You cannot preview the map. Run a game to see the map.
@@ -88,28 +88,9 @@ See the <a href="https://bob16.pythonanywhere.com/media/changelog.txt">changelog
 						<blockquote>
 							Some maps have many participating bots!
 						</blockquote>
-						Read the instructions in <code>config.ini</code> to correctly specify the bots you want play against.<br>
-						Let's say <code>some-map.map</code> requires 4 bots as it has 4 clusters. That does not mean 4 <i>files</i> are required!<br>
-						One of the clusters in the map is assigned a <i>"bot-instance"</i> formed from your AI script while other clusters select their <i>"bot-instance"</i> from a pool. 3 more clusters need to be assigned to their <i>"bot-instances"</i> (in our example).<br>
-						Say, <code>samples/</code> has only 2 sample bot-scripts. 3 <i>"bot-instances"</i> are created from just 2 scripts (uniformly) and they are assigned to the clusters in a random manner.
-						The <i>"pool"</i> participants can be controlled by the <code>use</code> attribute of <code>Samples</code> section in <code>config.ini</code>
-						
-						<p>These are the options understood by `use`:<br>
-						<code>
-						use : all
-						</code><br>
-						<blockquote>Game Engine will choose bots randomly from `samples`. Let's say `some-map` requires a total of 4 bots. One of them is your bot, 3 others are picked from `samples` uniformally *and* randomly.</blockquote>
-
-						<code>
-						use : none
-						</code><br>
-						<blockquote>The Game Engine will use instances of your own bot for the match (compete against yourself).</blockquote>
-
-						<code>
-						use : dumb,hardcoded
-						</code><br>
-						<blockquote>From `samples` pick only from given list (`size >= 1`). DO NOT USE SPACES HERE.</blockquote>
-						</p>
+						<ul>
+							<li>Read the instructions in <code>config.ini</code> to correctly specify the bots you want play against.</li>
+						</ul>
 						<blockquote>
 							<strong>Why do I need to specify the python version I&rsquo;m using?</strong><br>
 							A <code>python 3.5.1</code> interpreter is embedded in this starter pack. If you use version <code>3.X</code>, the inbuilt interpreter will run the script. Otherwise, you must have a working installation of python <code>2.7.X</code> on your machine.

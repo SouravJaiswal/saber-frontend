@@ -16,7 +16,7 @@ include 'includes/header.php'; ?>
 						<br>
 						<h3>Phone:</h3>
 						<p>Sourav : 9488202360</p>
-						<p>Ananya : 9766514471</p>
+						<p>Ananth : 9445828183</p>
 					</div>
 				</section>
 			</article>
